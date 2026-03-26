@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <h2>Edit Student</h2>
+  <form (ngSubmit)="save()" #form="ngForm">
+    <div class="mb-3">
+      <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+      <input [(ngModel)]="student().nombreCompleto" name="nombreCompleto" id="nombreCompleto" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input [(ngModel)]="student().correo" name="correo" id="correo" class="form-control" required />
+    </div>
+
+     <div class="mb-3">
+      <label for="sueldo" class="form-label">Sueldo</label>
+      <input [(ngModel)]="student().sueldo" name="sueldo" id="sueldo" class="form-control" required />
+    </div>
+
+     <div class="mb-3">
+      <label for="fechaContrato" class="form-label">Fecha Contrato</label>
+      <input [(ngModel)]="student().fechaContrato" name="fechaContrato" id="fechaContrato" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a routerLink="/students" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div>

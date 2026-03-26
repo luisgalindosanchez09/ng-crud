@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Students List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre Completo</th>
+        <th>Correo</th>
+        <th>Sueldo</th>
+        <th>Fecha Contrato</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students()">
+        <td>{{ s.idEmpleado }}</td>
+        <td>{{ s.nombreCompleto }}</td>
+        <td>{{ s.correo }}</td>
+        <td>{{ s.sueldo }}</td>
+        <td>{{ s.fechaContrato }}</td>
+        <td>
+          <a [routerLink]="['/students/edit', s.idEmpleado]" class="btn btn-sm btn-primary">Edit</a>
+          <button (click)="deleteStudent(s.idEmpleado)" routerLink="/students" class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
